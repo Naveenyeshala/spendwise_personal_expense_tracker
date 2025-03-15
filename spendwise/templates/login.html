@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Form</title>
+  <!-- Custom CSS for Login -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+    <div class="containers" style="justify-content: left;">
+        <div class="nav">
+            <nav>
+                <a href="/" style="text-decoration: none;"><img src="{{ url_for('static', filename='photos/rupee.png') }}" alt="logo"></a>
+            </nav>
+        </div>
+        <div>
+            <a href="/" style="text-decoration: none;"><h3>SpendWise</h3></a>
+        </div>
+
+  <div class="container">
+    <div class="login form">
+      <header>Login</header>
+      <form method="POST" action="{{ url_for('login') }}">
+        <input type="text" name="username" placeholder="Enter your username">
+        <input type="password" name="password" placeholder="Enter your password">
+        <a href="#">Forgot password?</a>
+        <input type="submit" class="button" value="Login">
+      </form>
+
+      <div class="signup">
+        <span class="signup">Don't have an account?
+         <a href="/register" style="color: #009579;">Signup</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

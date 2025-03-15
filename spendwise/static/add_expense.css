@@ -1,0 +1,116 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/static/photos/Designer.jpeg');
+
+}
+
+.form-container {
+    background-color: #fff;
+    opacity: 0.95;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 500;
+    color: #009579;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+    color: #555;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #009579;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #009579;
+    color: white;
+    padding: 12px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.submit-btn:hover {
+    background-color: #006653;
+}
+
+.flashes {
+    list-style: none;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+@media (max-width: 500px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input {
+        font-size: 0.9rem;
+    }
+
+    .submit-btn {
+        font-size: 1rem;
+    }
+}

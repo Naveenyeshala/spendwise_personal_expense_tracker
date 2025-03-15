@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    background-image: url('/static/photos/backgroundimgmain.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-attachment: fixed;
+    
+    
+}
+
+.dashboard-container {
+    display: flex;
+    max-width: 900px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0.95;
+}
+
+.sidebar {  
+    background-color: #a3b18a;
+    padding: 20px;
+    color: white;
+    border-radius: 10px 0 0 10px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition:  0.3s;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #007a63;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.budget-section h2, .expenses-section h2 {
+    font-size: 1.5rem;
+    color: #009579;
+}
+
+.budget-info {
+    background-color: #d1e7dd;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.expense-table thead {
+    background-color: #009579;
+    color: white;
+}
+
+.expense-table th, .expense-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.expense-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.expense-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.add-expense-btn, .set-budget-btn, .logout-btn {
+    background-color: #009579;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn {
+    background-color: #ff6b6b;
+}
+
+.add-expense-btn:hover, .set-budget-btn:hover, .logout-btn:hover {
+    background-color: #006653;
+}
+
+.logout-btn:hover {
+    background-color: #ff4b4b;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.edit-btn, .delete-btn {
+    color: #009579;
+    text-decoration: none;
+}
+
+.edit-btn:hover, .delete-btn:hover {
+    color: #006653;
+}
+
+.delete-btn {
+    color: #ff6b6b;
+}
+
+.delete-btn:hover {
+    color: #ff4b4b;
+}

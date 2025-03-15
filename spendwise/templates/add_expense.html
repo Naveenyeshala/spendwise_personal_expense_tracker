@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Expense</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_expense.css') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul class="flashes">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <div class="form-container">
+        <h1>Add Expense</h1>
+        <form method="POST" action="{{ url_for('add_expense') }}">
+            <div class="input-group">
+                <label for="description">Description:</label>
+                <input type="text" name="description" required placeholder="Enter expense description">
+            </div>
+
+            <div class="input-group">
+                <label for="amount">Amount:</label>
+                <input type="number" name="amount" step="1" required placeholder="Enter amount">
+            </div>
+
+            <div class="input-group">
+                <label for="date">Date:</label>
+                <input type="date" name="date" required>
+            </div>
+            <div class="input-group">
+                <label for="predefined_category">Category:</label>
+                <select id="predefined_category" name="category" onchange="toggleCustomCategory()">
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Custom">Custom</option>
+                </select><br>
+            </div>
+
+
+            <div class="input-group">
+                <label for="custom_category">Custom Category:</label>
+                <input type="text" id="custom_category" name="custom_category" placeholder="Enter custom category"
+                    disabled><br>
+                <!--  custom category is disabled -->
+            </div>
+
+
+
+            <button type="submit">Add Expense</button>
+        </form>
+
+    </div>
+    <!-- JavaScript to enable/disable the custom category input -->
+    <script>
+        function toggleCustomCategory() {
+            const predefinedCategory = document.getElementById('predefined_category').value;
+            const customCategoryField = document.getElementById('custom_category');
+
+            // If "Custom" is selected, enable the custom category field
+            if (predefinedCategory === 'Custom') {
+                customCategoryField.disabled = false;
+                customCategoryField.focus();
+            } else {
+                customCategoryField.disabled = true;
+                customCategoryField.value = '';  // Clear the input field if not custom
+            }
+        }
+    </script>
+</body>
+
+</html>

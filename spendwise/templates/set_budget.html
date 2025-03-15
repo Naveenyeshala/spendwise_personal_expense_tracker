@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Budget</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='budget.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Set Your Budget</h1>
+        <form method="POST">
+            <label for="budget">Budget Amount:</label>
+            <input type="number" name="budget" placeholder="Enter your budget" required>
+            <button type="submit">Set Budget</button>
+        </form>
+
+        <form method="POST" action="{{ url_for('delete_budget') }}">
+            <button type="submit">Delete Budget</button>
+        </form>
+
+        {% if budget %}
+        <p>Your current budget: ₹{{ budget }}</p>
+        {% else %}
+        <p>You have not set a budget yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
